@@ -10,16 +10,6 @@ gradle bootRun
 ```
 
 
-## 예제 주소
-```url
-https://github.com/parkmaeil/askchat
-https://github.com/parkmaeil/aispring
-https://github.com/parkmaeil/imagegen
-https://github.com/parkmaeil/voiceimage
-https://github.com/parkmaeil/imagetextgen.git
-
-```
-
 ## Reference
 ```url
 https://docs.spring.io/spring-ai/reference
@@ -33,6 +23,7 @@ org.springframework.ai:spring-ai-openai-spring-boot-starter
 
 ## 키발급
 ```tx
+환경설정에 추가
 ```
 
 
