@@ -8,6 +8,7 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.36/5a30490a6e14977d97d9c73c924c1f1b5311ea95/lombok-1.18.36.jar" />
         </processorPath>
         <module name="container.openai.main" />
+        <module name="container.rag.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="21" />
@@ -19,6 +20,9 @@
       <module name="container.openai" options="-parameters" />
       <module name="container.openai.main" options="-parameters" />
       <module name="container.openai.test" options="-parameters" />
+      <module name="container.rag" options="-parameters" />
+      <module name="container.rag.main" options="-parameters" />
+      <module name="container.rag.test" options="-parameters" />
     </option>
   </component>
 </project>

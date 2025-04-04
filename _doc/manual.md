@@ -22,8 +22,17 @@ org.springframework.ai:spring-ai-openai-spring-boot-starter
 ```
 
 ## 키발급
-```tx
+```txt
 환경설정에 추가
+```
+
+## postgre vector store 사용시
+```txt
+gradle 추가
+	implementation 'org.springframework.ai:spring-ai-pgvector-store'
+	runtimeOnly 'org.postgresql:postgresql'	
+
+docker run -d --name pgvector-db -h pgvector-db -p 5433:5433 -e POSTGRES_PASSWORD=0823 ankane/pgvector
 ```
 
 
@@ -64,4 +73,3 @@ org.springframework.ai:spring-ai-openai-spring-boot-starter
     </plugin>
 </plugins>
 ```
-
