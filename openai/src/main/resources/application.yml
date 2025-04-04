@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: openai
+  main:
+    banner-mode: off
+  output:
+    ansi:
+      enabled: always
+  mvc:
+    static-path-pattern: /static/**
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/movies
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    password: 1234
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  ai:
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimensions: 1536
+        table-name : hotel_vector
+        initialize-schema: true
+
+#  ai:
+#    openai:
+#      api-key: ${OPENAI_API_KEY}
+
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      force: true
+      force-response: true
+  tomcat:
+    uri-encoding: UTF-8
+
+upload:
+  path: openai/src/main/resources/static/uploads/
