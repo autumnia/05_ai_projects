@@ -32,7 +32,7 @@ public class DataLoader {
         Integer count=jdbcClient.sql("select count(*) from vector_store")
                 .query(Integer.class)
                 .single();
-        log.info("No of Records in the PG Vector Store: {}", count);
+        log.info("테이블에 있는 레코드 수: {}", count);
 
         if ( count != 0 ) {
             log.info( "DB에 이미 적재 된 경우 다시 로딩하지 않는다.");
@@ -40,10 +40,10 @@ public class DataLoader {
         }
 
 //        if(count==0){
-            log.info("Loading.....");
+            log.info("PDF 파일 적재 중.....");
 
             // PDF Reader
-            PdfDocumentReaderConfig config=PdfDocumentReaderConfig.builder()
+            PdfDocumentReaderConfig config = PdfDocumentReaderConfig.builder()
                     .withPageTopMargin(0)
                     .withPageExtractedTextFormatter(
                         ExtractedTextFormatter.builder()

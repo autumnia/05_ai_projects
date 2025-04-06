@@ -14,7 +14,6 @@ import org.springframework.jdbc.core.simple.JdbcClient;
 
 import java.nio.file.Files;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Configuration

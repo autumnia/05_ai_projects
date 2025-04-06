@@ -3,6 +3,7 @@ package com.autumnia.rag.pdfrag.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.model.ChatModel;
+import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,12 +56,13 @@ public class PdfController {
         promptsParameters.put("input", question);
         promptsParameters.put("documents", findSimilarData(question));
 
-        return get_result_from_chatmodel(template, promptsParameters);
+        Prompt prompt = template.create(promptsParameters);
+        return get_result_from_chatmodel(prompt);
     }
 
-    private String get_result_from_chatmodel(PromptTemplate template, Map<String, Object> promptsParameters) {
+    private String get_result_from_chatmodel(Prompt prompt) {
         return chatModel
-                .call(template.create(promptsParameters))
+                .call(prompt)
                 .getResult()
                 .getOutput()
                 .getText();

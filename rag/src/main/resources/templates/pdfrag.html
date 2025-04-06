@@ -39,7 +39,7 @@
 
         // Fetch API를 이용하여 서버에 질문 전송
         try {
-            const response = await fetch(`/api/answer?question=${encodeURIComponent(question)}`);
+            const response = await fetch(`/ai/api/answer?question=${encodeURIComponent(question)}`);
             const result = await response.text();
 
             // 서버의 응답을 받아와서 표시
