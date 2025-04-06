@@ -24,7 +24,7 @@ public class DataLoader {
     private final JdbcClient jdbcClient;
 
     // # 0. PDF 경로(resources 아래)
-    @Value("classpath:/SPRi AI Brief_11월호_산업동향_F.pdf")
+    @Value("classpath:/SPRi AI Brief_4월호_산업동향_250407_F.pdf")
     private Resource pdfResource;
 
     @PostConstruct
@@ -35,7 +35,7 @@ public class DataLoader {
         log.info("No of Records in the PG Vector Store: {}", count);
 
         if ( count != 0 ) {
-            log.info( "로깅 실패");
+            log.info( "DB에 이미 적재 된 경우 다시 로딩하지 않는다.");
             return;
         }
 

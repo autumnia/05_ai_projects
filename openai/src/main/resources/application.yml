@@ -17,16 +17,13 @@ spring:
     hibernate:
       ddl-auto: none #create
     show-sql: true
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/movie?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    username: root
-#    password: 1234
-
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: 0823
+    url: jdbc:mysql://localhost:3306/movie?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+
+
   ai:
     vectorstore:
       pgvector:
