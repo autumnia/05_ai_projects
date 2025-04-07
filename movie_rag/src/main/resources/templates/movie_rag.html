@@ -15,7 +15,7 @@
             <p class="text-center">Enter a movie plot or theme to find similar movies:</p>
 
             <!-- Form to input query -->
-            <form action="#" th:action="@{/recommend}" method="post" class="mb-4">
+            <form action="#" th:action="@{/ai/movie/recommend}" method="post" class="mb-4">
                 <div class="input-group mb-3">
                     <input type="text" name="query" class="form-control" placeholder="Enter a movie plot or theme..." th:value="${query}" required>
                     <button class="btn btn-primary" type="submit">Search</button>

@@ -1,5 +1,6 @@
 package com.autumnia.rag.movierag.controller;
 
+import com.autumnia.rag.movierag.util.URLTest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import java.util.List;
 
 @Slf4j
@@ -25,14 +27,20 @@ public class MovieController {
 
     @GetMapping("/movie")
     public String getRecommendationForm() {
-        return "movieRAG";  // returns the HTML file 'recommend.html'
+        return "movie_rag";  // returns the HTML file 'recommend.html'
     }
 
     // 어떤 남자가 억울하게 감옥에 갇혔고, 그는 탈출을 계획합니다 - query ->임베딩[   ,,,,,,,   ]
-    @PostMapping("/recommend")
+    @PostMapping("/movie/recommend")
     public String recommendMovies1(@RequestParam("query") String query, Model model) throws Exception {
         // Fetch similar movies using vector store
-        List<Document> results = vectorStore.similaritySearch(SearchRequest.query(query).withSimilarityThreshold(0.85).withTopK(1));
+        List<Document> results = vectorStore.similaritySearch(
+                SearchRequest.builder()
+                        .query(query)
+                        .similarityThreshold(0.85)
+                        .topK(1)
+                        .build()
+        );
 
         if (!results.isEmpty()) {
             Document topResult = results.get(0);

@@ -1,4 +1,4 @@
-package com.example.pgvector.config;
+package com.autumnia.rag.movierag.config;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,6 @@ import org.springframework.jdbc.core.simple.JdbcClient;
 
 import java.nio.file.Files;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Configuration
@@ -28,6 +27,8 @@ public class MovieLoader {
 
     @PostConstruct
     public void init() throws Exception {
+        log.info("시작");
+
         Integer count=jdbcClient.sql("select count(*) from movie_vector")
                 .query(Integer.class)
                 .single();
@@ -47,9 +48,9 @@ public class MovieLoader {
 
             TextSplitter textSplitter = new TokenTextSplitter();
             for(Document document : documents) {
-                List<Document> splitteddocs = textSplitter.split(document);
+                List<Document> splitted_docs = textSplitter.split(document);
                 System.out.println("before adding document: " + document.getText());
-                vectorStore.add(splitteddocs); //임베딩
+                vectorStore.add(splitted_docs); //임베딩
                 System.out.println("Added document: " + document.getText());
                 Thread.sleep(1000); // 1초
             }
