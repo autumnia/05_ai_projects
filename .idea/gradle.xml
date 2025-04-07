@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/movie_rag" />
             <option value="$PROJECT_DIR$/openai" />
             <option value="$PROJECT_DIR$/rag" />
           </set>

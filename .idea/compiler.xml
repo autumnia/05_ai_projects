@@ -9,6 +9,7 @@
         </processorPath>
         <module name="container.openai.main" />
         <module name="container.rag.main" />
+        <module name="container.movie_rag.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="21" />
@@ -17,6 +18,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="container.board.main" options="-parameters" />
       <module name="container.board.test" options="-parameters" />
+      <module name="container.movie_rag" options="-parameters" />
+      <module name="container.movie_rag.main" options="-parameters" />
+      <module name="container.movie_rag.test" options="-parameters" />
       <module name="container.openai" options="-parameters" />
       <module name="container.openai.main" options="-parameters" />
       <module name="container.openai.test" options="-parameters" />

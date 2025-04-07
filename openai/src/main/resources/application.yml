@@ -22,22 +22,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 1234
-
-
   ai:
-    vectorstore:
-      pgvector:
-        index-type: HNSW
-        distance-type: COSINE_DISTANCE
-        dimensions: 1536
-        table-name : hotel_vector
-#        initialize-schema: false
-        initialize: false
-
-
-#  ai:
-#    openai:
-#      api-key: ${OPENAI_API_KEY}
+    openai:
+      api-key: ${OPENAI_API_KEY}
 
 
 server:

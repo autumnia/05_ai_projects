@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/movie_rag/container.movie_rag.main.iml" filepath="$PROJECT_DIR$/.idea/modules/movie_rag/container.movie_rag.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/openai/container.openai.main.iml" filepath="$PROJECT_DIR$/.idea/modules/openai/container.openai.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rag/container.rag.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rag/container.rag.main.iml" />
     </modules>

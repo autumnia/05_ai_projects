@@ -1,0 +1,41 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      force: true
+      force-response: true
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    name: movie_rag
+  main:
+    banner-mode: off
+  output:
+    ansi:
+      enabled: always
+#  mvc:
+#    static-path-pattern: /static/**
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: myuser
+    password: secret
+
+  ai:
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimensions: 1536
+        table-name: movie_vector
+        initialize-schema: true
+    openai:
+      api-key: ${OPENAI_API_KEY}
+
+
+#docker run -it --rm --name postgres -h postgres -p 5432:5432 -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=secret pgvector/pgvector
+#docker run -d --name postgres -h postgres -p 5432:5432 -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=secret pgvector/pgvector

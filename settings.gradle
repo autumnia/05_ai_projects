@@ -9,3 +9,4 @@
 rootProject.name = 'container'
 include 'openai'
 include 'rag'
+include 'movie_rag'
