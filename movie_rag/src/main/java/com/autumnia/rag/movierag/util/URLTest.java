@@ -15,7 +15,7 @@ public class URLTest {
         String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q="
                 + movieTitle
                 + "&order=relevance"
-                + "&key=본인의 key를 입력하세요.";
+                + "&key=AIzaSyAbyCfTNakLnu7hsg5xRr4SM16AWOwQZHw";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);

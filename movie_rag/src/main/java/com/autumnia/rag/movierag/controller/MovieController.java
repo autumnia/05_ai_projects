@@ -5,16 +5,18 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.document.Document;
-import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.ai.vectorstore.SearchRequest;
+import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
 
-
+import java.awt.*;
 import java.util.List;
 
 @Slf4j
@@ -42,23 +44,23 @@ public class MovieController {
                         .build()
         );
 
-        if (!results.isEmpty()) {
-            Document topResult = results.get(0);
-            String movieContent = topResult.getText();
-            String title=movieContent.substring(movieContent.indexOf("(")+1, movieContent.lastIndexOf(")")); //(쇼생크탈출)
-            // Use Jsoup to fetch the YouTube URL
-            List<String> url = URLTest.searchYouTube(title);
-            model.addAttribute("title", title);
-            // Add the movie details and YouTube URL to the model
-            model.addAttribute("results", movieContent);
-            model.addAttribute("youtubeUrls", url);
-        }
-        else{
-            model.addAttribute("message", "No closely related movies found.");
+        if ( results.isEmpty() ) {
+            model.addAttribute("message", "관련된 영화를 찾을 수 없음");
+            return "movie_rag";
         }
 
+        Document topResult = results.get(0);
+        String movieContent = topResult.getText();
+        String title=movieContent.substring( movieContent.indexOf("(")+1, movieContent.lastIndexOf(")") ); //(쇼생크탈출)
+
+        // Use Jsoup to fetch the YouTube URL
+        List<String> url = URLTest.searchYouTube(title);
+
+        model.addAttribute("title", title);
+        model.addAttribute("results", movieContent);
+        model.addAttribute("youtubeUrls", url);
         model.addAttribute("query", query);
 
-        return "movieRAG";  // Renders the 'movieRAG.html' view
+        return "movie_rag";  // Renders the 'movieRAG.html' view
     }
 }

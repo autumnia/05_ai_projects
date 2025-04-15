@@ -24,7 +24,8 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="f3a02148-c12d-4f40-9164-afb49ed93b40">
-      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[select * from vector_store;]]></console>
+      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[select * from vector_store;
+select * from movie_vector;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -42,6 +43,7 @@
         <condition column="id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="f3a02148-c12d-4f40-9164-afb49ed93b40" dataset="public.movie_vector" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />

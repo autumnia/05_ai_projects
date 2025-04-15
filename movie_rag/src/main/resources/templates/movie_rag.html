@@ -35,7 +35,8 @@
                         <div th:each="youtubeUrl : ${youtubeUrls}">
                             <div class="embed-responsive embed-responsive-16by9 mb-3">
                                 <iframe th:src="'https://www.youtube.com/embed/' + ${youtubeUrl}"
-                                        frameborder="0" allowfullscreen class="embed-responsive-item"></iframe>
+                                        frameborder="0" allowfullscreen class="embed-responsive-item">
+                                </iframe>
                             </div>
                         </div>
                     </li>

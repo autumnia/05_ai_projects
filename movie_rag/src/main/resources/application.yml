@@ -21,7 +21,7 @@ spring:
 #    static-path-pattern: /static/**
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/mydatabase
     username: myuser
     password: secret
 
