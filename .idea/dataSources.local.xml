@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-251.23774.435">
+    <data-source name="mydatabase@localhost" uuid="0b403968-5173-4174-9325-a47df9a3f459">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <user-name>myuser</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="mydatabase@localhost" uuid="bf5367c7-a64e-46c1-8b6d-e6c8ddbcbf71">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <user-name>myuser</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="mydatabase@localhost" uuid="7bc4bea9-28e6-4b11-803f-bf66b6eefeec">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <user-name>myuser</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="mydatabase@localhost" uuid="52a30c06-6419-40b9-bba7-7087abf345cb">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <user-name>myuser</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="mydatabase@localhost" uuid="8082365e-2890-429f-9e69-3262d278a6fb">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <user-name>myuser</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="movie@localhost" uuid="6f9b1052-1f71-4eaf-88ec-0ff2f9458bba">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="mydatabase@localhost" uuid="b0966b5c-ff1b-4eaf-b28a-64ab36b7ca54">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <user-name>myuser</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="movie@localhost" uuid="b4065937-9c9c-4f9e-a46e-81fdbea12360">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
