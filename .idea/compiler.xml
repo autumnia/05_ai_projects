@@ -8,8 +8,9 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.36/5a30490a6e14977d97d9c73c924c1f1b5311ea95/lombok-1.18.36.jar" />
         </processorPath>
         <module name="container.openai.main" />
-        <module name="container.rag.main" />
         <module name="container.movie_rag.main" />
+        <module name="container.rag.main" />
+        <module name="container.hotel_rag.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="21" />
@@ -18,6 +19,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="container.board.main" options="-parameters" />
       <module name="container.board.test" options="-parameters" />
+      <module name="container.hotel_rag" options="-parameters" />
+      <module name="container.hotel_rag.main" options="-parameters" />
+      <module name="container.hotel_rag.test" options="-parameters" />
       <module name="container.movie_rag" options="-parameters" />
       <module name="container.movie_rag.main" options="-parameters" />
       <module name="container.movie_rag.test" options="-parameters" />
