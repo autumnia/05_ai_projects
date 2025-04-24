@@ -18,7 +18,7 @@ spring:
       ddl-auto: none #create
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/movie?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/movies?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 1234
