@@ -13,6 +13,14 @@
         <module name="container.rag.main" />
         <module name="container.hotel_rag.main" />
       </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok-mapstruct-binding/0.2.0/2f1cf9ced7b720ba4996c942b816669e63f0fa4f/lombok-mapstruct-binding-0.2.0.jar" />
+        </processorPath>
+        <module name="container.chat_server.main" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="21" />
   </component>
@@ -20,6 +28,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="container.board.main" options="-parameters" />
       <module name="container.board.test" options="-parameters" />
+      <module name="container.chat_server" options="-parameters" />
+      <module name="container.chat_server.main" options="-parameters" />
+      <module name="container.chat_server.test" options="-parameters" />
       <module name="container.hotel_rag" options="-parameters" />
       <module name="container.hotel_rag.main" options="-parameters" />
       <module name="container.hotel_rag.test" options="-parameters" />
@@ -32,6 +43,9 @@
       <module name="container.rag" options="-parameters" />
       <module name="container.rag.main" options="-parameters" />
       <module name="container.rag.test" options="-parameters" />
+      <module name="container.socket_chat" options="-parameters" />
+      <module name="container.socket_chat.main" options="-parameters" />
+      <module name="container.socket_chat.test" options="-parameters" />
     </option>
   </component>
 </project>
