@@ -1,4 +1,4 @@
-package com.autumnia.chat.domain;
+package com.autumnia.chat.controller;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
