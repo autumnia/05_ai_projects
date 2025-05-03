@@ -1,7 +1,12 @@
 package com.autumnia.chat.service;
 
+import com.autumnia.chat.common.exception.CustomException;
+import com.autumnia.chat.common.exception.ErrorCode;
+import com.autumnia.chat.common.security.Hasher;
 import com.autumnia.chat.controller.CreateUserRequest;
 import com.autumnia.chat.controller.CreateUserResponse;
+import com.autumnia.chat.controller.LoginRequest;
+import com.autumnia.chat.controller.LoginResponse;
 import com.autumnia.chat.domain.UserCredentialsEntity;
 import com.autumnia.chat.domain.UserEntity;
 import com.autumnia.chat.repository.UserRepository;
@@ -9,7 +14,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import javax.script.ScriptEngine;
 import java.sql.Timestamp;
 import java.util.Optional;
 
@@ -18,11 +22,32 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ChatService {
     private final UserRepository userRepository;
+    private final Hasher hasher;
+
+    public LoginResponse login(LoginRequest loginRequest) {
+        Optional<UserEntity> userEntity = userRepository.findByName(loginRequest.name());
+        if ( userEntity.isEmpty()) {
+            log.error("User {} not exists", loginRequest.name());
+            throw new CustomException(ErrorCode.NOT_EXIST);
+        }
+
+        userEntity.map(v -> {
+            String hashedValue = hasher.get_hashing_value(loginRequest.password());
+            if (!v.getCredentials().get_hashed_password().equals(hashedValue)) {
+                throw new CustomException(ErrorCode.MISMATCH_PASSWORD);
+            }
+
+            return hashedValue;
+        });
+
+        return new LoginResponse( ErrorCode.SUCCESS.getMessage(),"Token");
+    }
 
     public CreateUserResponse create_user(CreateUserRequest request)  {
         Optional<UserEntity> userEntity = userRepository.findByName(request.name());
         if (userEntity.isPresent()) {
-            return new CreateUserResponse("400");
+            log.error("User {} already exists", request.name());
+            throw new CustomException(ErrorCode.USER_ALREADY_EXIST);
         }
 
         try {
@@ -30,32 +55,28 @@ public class ChatService {
             UserCredentialsEntity credentials = add_credential(new_user, request);
 
             UserEntity user_created  = userRepository.save(new_user);
-
-            return new CreateUserResponse("400");
-        } catch ( Exception e) {
+        }
+        catch ( Exception e) {
             log.debug(e.getMessage());
+            throw new CustomException(ErrorCode.USER_SAVED_FAILED);
         }
 
-
-        return new CreateUserResponse( "200");
+        return new CreateUserResponse( ErrorCode.SUCCESS.getMessage() );
     }
 
-    private static UserEntity add_user(CreateUserRequest request) {
+    private UserEntity add_user(CreateUserRequest request) {
         return UserEntity.builder()
                 .name(request.name())
                 .created_at( new Timestamp(System.currentTimeMillis()) )
                 .build();
     }
 
-    private static UserCredentialsEntity add_credential(UserEntity user, CreateUserRequest request) {
+    private UserCredentialsEntity add_credential(UserEntity userEntity, CreateUserRequest request) {
+        String hashedValue = hasher.get_hashing_value(request.password());
 
         return UserCredentialsEntity.builder()
-                .userEntity(user)
-                .hashed_password(request.password())
+                .userEntity(userEntity)
+                .hashed_password(hashedValue)
                 .build();
     }
-
-
-
-
 }

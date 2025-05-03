@@ -14,4 +14,8 @@ public class UserCredentialsEntity {
 
     @Column(nullable = false)
     private String hashed_password;
+
+    public String get_hashed_password() {
+        return hashed_password;
+    }
 }

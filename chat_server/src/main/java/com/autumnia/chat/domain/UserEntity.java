@@ -9,7 +9,8 @@ import java.sql.Timestamp;
 
 @Entity @Table(name="user")
 @AllArgsConstructor @NoArgsConstructor( access = AccessLevel.PROTECTED )
-@Setter @Builder
+@Setter @Getter
+@Builder
 public class UserEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
