@@ -1,4 +1,4 @@
-package com.autumnia.chat.common.exception;
+package com.autumnia.chatserver.common.exception;
 
 public interface ICode {
     Integer getCode();

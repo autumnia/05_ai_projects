@@ -1,4 +1,4 @@
-package com.autumnia.chat.common.config;
+package com.autumnia.chatserver.common.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

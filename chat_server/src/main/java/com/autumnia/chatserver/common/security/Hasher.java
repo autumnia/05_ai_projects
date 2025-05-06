@@ -1,8 +1,7 @@
-package com.autumnia.chat.common.security;
+package com.autumnia.chatserver.common.security;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;

@@ -1,4 +1,4 @@
-package com.autumnia.chat;
+package com.autumnia.chatserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

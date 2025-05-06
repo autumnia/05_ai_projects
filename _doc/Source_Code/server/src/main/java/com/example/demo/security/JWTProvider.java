@@ -68,7 +68,8 @@ public class JWTProvider {
             DecodedJWT decoded = JWT.require(Algorithm.HMAC256(secretKey)).build().verify(token);
             log.error("token must be expired : {}", decoded.getSubject());
             throw new CustomException(ErrorCode.ACCESS_TOKEN_IS_NOT_EXPIRED);
-        } catch (AlgorithmMismatchException | SignatureVerificationException | InvalidClaimException e) {
+        }
+        catch (AlgorithmMismatchException | SignatureVerificationException | InvalidClaimException e) {
             throw new CustomException(ErrorCode.TOKEN_IS_INVALID);
         } catch (TokenExpiredException e) {
             return JWT.decode(token);
@@ -76,6 +77,7 @@ public class JWTProvider {
     }
 
     public static DecodedJWT decodeAccessToken(String token) {
+
         return decodeTokenAfterVerify(token, secretKey);
     }
 

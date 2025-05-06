@@ -1,4 +1,4 @@
-package com.autumnia.chat.controller;
+package com.autumnia.chatserver.auth.controller;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 

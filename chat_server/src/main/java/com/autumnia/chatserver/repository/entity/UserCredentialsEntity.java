@@ -1,4 +1,4 @@
-package com.autumnia.chat.domain;
+package com.autumnia.chatserver.repository.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

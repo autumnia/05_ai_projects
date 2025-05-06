@@ -1,4 +1,4 @@
-package com.autumnia.chat.common.config;
+package com.autumnia.chatserver.common.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Value;

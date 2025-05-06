@@ -1,4 +1,4 @@
-package com.autumnia.chat.common.config;
+package com.autumnia.chatserver.common.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;

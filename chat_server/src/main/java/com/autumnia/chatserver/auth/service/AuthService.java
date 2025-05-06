@@ -1,18 +1,19 @@
-package com.autumnia.chat.service;
+package com.autumnia.chatserver.auth.service;
 
-import com.autumnia.chat.common.exception.CustomException;
-import com.autumnia.chat.common.exception.ErrorCode;
-import com.autumnia.chat.common.security.Hasher;
-import com.autumnia.chat.controller.CreateUserRequest;
-import com.autumnia.chat.controller.CreateUserResponse;
-import com.autumnia.chat.controller.LoginRequest;
-import com.autumnia.chat.controller.LoginResponse;
-import com.autumnia.chat.domain.UserCredentialsEntity;
-import com.autumnia.chat.domain.UserEntity;
-import com.autumnia.chat.repository.UserRepository;
+import com.autumnia.chatserver.common.exception.CustomException;
+import com.autumnia.chatserver.common.exception.ErrorCode;
+import com.autumnia.chatserver.common.security.Hasher;
+import com.autumnia.chatserver.auth.controller.CreateUserRequest;
+import com.autumnia.chatserver.auth.controller.CreateUserResponse;
+import com.autumnia.chatserver.auth.controller.LoginRequest;
+import com.autumnia.chatserver.auth.controller.LoginResponse;
+import com.autumnia.chatserver.repository.entity.UserCredentialsEntity;
+import com.autumnia.chatserver.repository.entity.UserEntity;
+import com.autumnia.chatserver.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import com.autumnia.chatserver.common.security.JWTProvider;
 
 import java.sql.Timestamp;
 import java.util.Optional;
@@ -20,7 +21,7 @@ import java.util.Optional;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class ChatService {
+public class AuthService {
     private final UserRepository userRepository;
     private final Hasher hasher;
 
@@ -40,7 +41,10 @@ public class ChatService {
             return hashedValue;
         });
 
-        return new LoginResponse( ErrorCode.SUCCESS.getMessage(),"Token");
+        String token = JWTProvider.create_refresh_token( loginRequest.name() );
+
+        return new LoginResponse(ErrorCode.SUCCESS.getMessage(), token);
+
     }
 
     public CreateUserResponse create_user(CreateUserRequest request)  {
@@ -79,4 +83,10 @@ public class ChatService {
                 .hashed_password(hashedValue)
                 .build();
     }
+
+    public String get_user_from_token(String token) {
+        return JWTProvider.getUserFromToken(token);
+    }
+
+
 }

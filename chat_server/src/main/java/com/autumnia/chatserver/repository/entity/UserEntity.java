@@ -1,8 +1,7 @@
-package com.autumnia.chat.domain;
+package com.autumnia.chatserver.repository.entity;
 
 import lombok.*;
 import jakarta.persistence.*;
-import static jakarta.persistence.FetchType.LAZY;
 
 import java.sql.Timestamp;
 

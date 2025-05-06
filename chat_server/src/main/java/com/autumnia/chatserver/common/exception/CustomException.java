@@ -1,7 +1,6 @@
-package com.autumnia.chat.common.exception;
+package com.autumnia.chatserver.common.exception;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

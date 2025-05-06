@@ -1,11 +1,11 @@
-package com.autumnia.chat.controller;
+package com.autumnia.chatserver.auth.controller;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-@Schema(description="user request")
-public record CreateUserRequest(
+@Schema(description="로그인 요청")
+public record LoginRequest(
         @Schema(description = "유저 이름")
         @NotBlank @NotNull
         String name,
@@ -14,4 +14,5 @@ public record CreateUserRequest(
         @NotBlank @NotNull
         String password
 ) {
+
 }
