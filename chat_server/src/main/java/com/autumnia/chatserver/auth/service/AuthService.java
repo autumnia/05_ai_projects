@@ -7,9 +7,9 @@ import com.autumnia.chatserver.auth.controller.CreateUserRequest;
 import com.autumnia.chatserver.auth.controller.CreateUserResponse;
 import com.autumnia.chatserver.auth.controller.LoginRequest;
 import com.autumnia.chatserver.auth.controller.LoginResponse;
-import com.autumnia.chatserver.repository.entity.UserCredentialsEntity;
-import com.autumnia.chatserver.repository.entity.UserEntity;
-import com.autumnia.chatserver.repository.UserRepository;
+import com.autumnia.chatserver.auth.entity.UserCredentialsEntity;
+import com.autumnia.chatserver.auth.entity.UserEntity;
+import com.autumnia.chatserver.auth.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -85,7 +85,7 @@ public class AuthService {
     }
 
     public String get_user_from_token(String token) {
-        return JWTProvider.getUserFromToken(token);
+        return JWTProvider.get_user_from_token(token);
     }
 
 

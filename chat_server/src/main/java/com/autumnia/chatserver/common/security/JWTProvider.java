@@ -22,10 +22,10 @@ public class JWTProvider {
     private static String secret_key;
     private static String refresh_secret_key;
     private static Long token_time_for_minute;
-    private static Long Refresh_token_time_for_minute;
+    private static Long refresh_token_time_for_minute;
 
 
-    @Value("${token.key}")
+    @Value("${token.secret-key}")
     public void set_secret_key(String secret_key) {
         JWTProvider.secret_key = secret_key;
     }
@@ -35,14 +35,14 @@ public class JWTProvider {
         JWTProvider.refresh_secret_key = refresh_secret_key;
     }
 
-    @Value("${token.secret-key}")
+    @Value("${token.token-time}")
     public void set_token_time_for_minute(Long token_time_for_minute) {
         JWTProvider.token_time_for_minute = token_time_for_minute;
     }
 
-    @Value("${token.refresh-secret-key}")
-    public void set_Refresh_time_for_minute(Long Refresh_keytoken_time_for_minute) {
-        JWTProvider.Refresh_token_time_for_minute = Refresh_keytoken_time_for_minute;
+    @Value("${token.refresh-token-time}")
+    public void set_refresh_time_for_minute(Long refresh_token_time_for_minute) {
+        JWTProvider.refresh_token_time_for_minute = refresh_token_time_for_minute;
     }
 
 
@@ -112,7 +112,7 @@ public class JWTProvider {
 //        }
     }
 
-    public static String getUserFromToken(String token) {
+    public static String get_user_from_token(String token) {
         DecodedJWT jwt = decoded_JWT(token);
         return jwt.getSubject();
     }

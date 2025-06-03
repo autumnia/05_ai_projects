@@ -1,6 +1,6 @@
-package com.autumnia.chatserver.repository;
+package com.autumnia.chatserver.auth.repository;
 
-import com.autumnia.chatserver.repository.entity.UserEntity;
+import com.autumnia.chatserver.auth.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
