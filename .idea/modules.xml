@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/chat_server/container.chat_server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/chat_server/container.chat_server.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hotel_rag/container.hotel_rag.main.iml" filepath="$PROJECT_DIR$/.idea/modules/hotel_rag/container.hotel_rag.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modulith/container.modulith.main.iml" filepath="$PROJECT_DIR$/.idea/modules/modulith/container.modulith.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/movie_rag/container.movie_rag.main.iml" filepath="$PROJECT_DIR$/.idea/modules/movie_rag/container.movie_rag.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/openai/container.openai.main.iml" filepath="$PROJECT_DIR$/.idea/modules/openai/container.openai.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rag/container.rag.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rag/container.rag.main.iml" />

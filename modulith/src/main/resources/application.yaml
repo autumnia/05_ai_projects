@@ -1,0 +1,31 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+  tomcat:
+    uri-encoding: UTF-8
+
+logging:
+  pattern:
+    #    console: '%d{yyyy-MM-dd HH:mm:ss} time:%r log-level:%p filename:%F %n classname:%C functionname:%M linecount:%L %n  %m %n%n'
+    console: '%d{yyyy-MM-dd HH:mm:ss} %n ㄴ처리시간:%r   로그레벨:%p   파일명:%F   함수명:%M  라인수:%L  %n ㄴ메시지:%m %n%n'
+  level:
+    root:
+      WARN
+
+spring:
+  application:
+    name: modulith
+  main:
+    banner-mode: off
+  output:
+    ansi:
+      enabled: always
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+
