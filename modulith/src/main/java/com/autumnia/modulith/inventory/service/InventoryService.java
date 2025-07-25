@@ -1,4 +1,4 @@
-package com.autumnia.modulith.inventory;
+package com.autumnia.modulith.inventory.service;
 
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,7 @@
-package com.autumnia.modulith.inventory;
+package com.autumnia.modulith.inventory.event;
 
 
+import com.autumnia.modulith.inventory.service.InventoryService;
 import com.autumnia.modulith.order.event.OrderCompletedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;

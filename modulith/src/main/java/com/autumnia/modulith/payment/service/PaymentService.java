@@ -1,4 +1,4 @@
-package com.autumnia.modulith.payment;
+package com.autumnia.modulith.payment.service;
 
 import org.springframework.stereotype.Service;
 
