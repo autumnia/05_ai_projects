@@ -1,6 +1,6 @@
 package com.autumnia.modulith;
 
-import com.autumnia.modulith.order.OrderService;
+import com.autumnia.modulith.order.service.OrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

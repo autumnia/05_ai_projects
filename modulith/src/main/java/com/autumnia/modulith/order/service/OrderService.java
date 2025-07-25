@@ -1,5 +1,8 @@
-package com.autumnia.modulith.order;
+package com.autumnia.modulith.order.service;
 
+import com.autumnia.modulith.order.Order;
+import com.autumnia.modulith.order.event.OrderCompletedEvent;
+import com.autumnia.modulith.order.repository.OrderRepository;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 

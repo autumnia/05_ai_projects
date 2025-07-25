@@ -1,7 +1,7 @@
 package com.autumnia.modulith.payment;
 
 
-import com.autumnia.modulith.order.OrderCompletedEvent;
+import com.autumnia.modulith.order.event.OrderCompletedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;

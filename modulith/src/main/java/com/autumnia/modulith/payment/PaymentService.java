@@ -10,6 +10,5 @@ public class PaymentService {
         
         System.out.printf("결제 처리 완료: 주문번호 %d\n", orderId);
         System.out.println("결제 완료\n");
-
     }
 }
